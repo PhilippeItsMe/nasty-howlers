@@ -28,7 +28,7 @@ if (newsletterForm) {
         setStatus("Sending...");
 
         try {
-            const response = await fetch("/.netlify/functions/subscribe", {
+            const response = await fetch("/api/subscribe", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

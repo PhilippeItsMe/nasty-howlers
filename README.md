@@ -118,24 +118,30 @@ Happy coding!
 This project includes a secure newsletter subscription flow:
 
 - Frontend form submits from index.html.
-- Browser sends email to Netlify Function /.netlify/functions/subscribe.
+- Browser sends email to Vercel function /api/subscribe.
 - Function sends contact to Brevo API.
 
 ### Required Environment Variables
 
-Set these in Netlify Site settings > Environment variables:
+Set these in Vercel Project settings > Environment Variables:
 
 - BREVO_API_KEY: your Brevo API key.
 - BREVO_LIST_ID: numeric list id in Brevo (example: 2).
 
+### Deploying On Vercel
+
+1. Import this repository into Vercel.
+2. Add the two environment variables in Vercel.
+3. Deploy.
+
 ### Local Testing
 
-Use Netlify CLI so serverless functions are available:
+Use Vercel CLI so API routes are available locally:
 
-1. npm install -g netlify-cli
-2. netlify dev
+1. npm install -g vercel
+2. vercel dev
 
-Then open the local URL provided by Netlify CLI.
+Then open the local URL provided by Vercel CLI.
 
 ### Notes
 
