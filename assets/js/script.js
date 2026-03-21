@@ -36,10 +36,22 @@ if (newsletterForm) {
                 body: JSON.stringify({ email })
             });
 
-            const result = await response.json().catch(() => ({}));
+            const contentType = response.headers.get("content-type") || "";
+            let result = {};
+
+            if (contentType.includes("application/json")) {
+                result = await response.json().catch(() => ({}));
+            } else {
+                const text = await response.text().catch(() => "");
+                result = { error: text ? text.slice(0, 180) : "" };
+            }
 
             if (!response.ok) {
-                throw new Error(result.error || "Subscription failed.");
+                if (response.status === 404) {
+                    throw new Error("API route not found (404). Open the site from Vercel, not GitHub Pages.");
+                }
+
+                throw new Error(result.error || `Subscription failed (HTTP ${response.status}).`);
             }
 
             setStatus("Thanks! Your subscription is confirmed.");
