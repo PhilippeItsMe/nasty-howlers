@@ -110,3 +110,34 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+---
+
+## Newsletter Brevo Integration
+
+This project includes a secure newsletter subscription flow:
+
+- Frontend form submits from index.html.
+- Browser sends email to Netlify Function /.netlify/functions/subscribe.
+- Function sends contact to Brevo API.
+
+### Required Environment Variables
+
+Set these in Netlify Site settings > Environment variables:
+
+- BREVO_API_KEY: your Brevo API key.
+- BREVO_LIST_ID: numeric list id in Brevo (example: 2).
+
+### Local Testing
+
+Use Netlify CLI so serverless functions are available:
+
+1. npm install -g netlify-cli
+2. netlify dev
+
+Then open the local URL provided by Netlify CLI.
+
+### Notes
+
+- The Brevo API key stays server-side only and is never exposed in frontend code.
+- The function uses updateEnabled: true so existing contacts can be updated.
