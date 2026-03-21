@@ -9,6 +9,7 @@
     <meta name="author" content="Philippe Tschanun">
     <meta name="description" content="The ultimate coverbrand to rock your world">
     <meta name="keywords" content="rock blue coverband band geneva">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/script.js" defer></script>
 </head>
@@ -19,13 +20,59 @@
             <div class="hero-block">
                 <h1>NASTY HOWLERS</h1>
                 <p class="sub-title">JOIN THE TRIP</p>
-                <a href="">BOOK US</a>
+                <a class="book-link" href="https://nasty-howlers.ch/#contact" aria-label="Book us">
+                    <i class="fa-brands fa-spotify"></i>
+                    <span>BOOK US</span>
+                </a>
+        
             </div>
         </section>
+        <section class="nav">
+            <nav>
+                <img src="assets/images/logo.png" alt="">
+                
+                <!-- Desktop menu -->
+                <div id="desktop-menu" aria-hidden="false">
+                    <ul>
+                        <li><a href="#">Music</a></li>
+                        <li><a href="#">Tour</a></li>
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Mobile menu closed -->
+                <div id="mobile-menu-closed" aria-hidden="true" aria-expanded="false">
+                    <button class="burger-menu" aria-label="Open menu">
+                        <img src="assets/images/icon-menu.svg" alt="">
+                    </button>
+                </div>
 
-
-
-
-
+                <!-- Mobile menu open -->
+                <div id="mobile-menu-open" aria-hidden="true" aria-expanded="true">
+                    <button aria-label="Close menu">
+                        <img src="assets/images/icon-close.svg" alt="">
+                    </button>
+                    <ul>
+                        <li><a href="#">Music</a></li>
+                        <li><a href="#">Tour</a></li>
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav> 
+        </section>
+        <section class="newsletter">
+            <div class="bloc1">
+                <p class="punchline">GET <span class="orange">NASTY HOWLERS</span> UPDATES IN YOUR INBOX</p>
+                <img src="assets/images/music_plateform.png" alt="">
+            </div>
+            <form class="bloc2" id="newsletter-form" novalidate>
+                <label class="sr-only" for="newsletter-email">Email</label>
+                <input id="newsletter-email" type="email" placeholder="E-mail" name="email" autocomplete="email" required>
+                <button type="submit">SIGN</button>
+                <p id="newsletter-status" class="newsletter-status" aria-live="polite"></p>
+            </form>
+        </section>
     </main>
 </body>
