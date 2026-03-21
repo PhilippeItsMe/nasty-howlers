@@ -9,8 +9,22 @@ export default async function handler(req, res) {
     const listIdRaw = String(process.env.BREVO_LIST_ID || "").replace("#", "").trim();
     const listId = Number.parseInt(listIdRaw, 10);
 
-    if (!apiKey || Number.isNaN(listId)) {
-        return res.status(500).json({ error: "Server is not configured." });
+    if (!apiKey && Number.isNaN(listId)) {
+        return res.status(500).json({
+            error: "Server config missing: BREVO_API_KEY and BREVO_LIST_ID are required."
+        });
+    }
+
+    if (!apiKey) {
+        return res.status(500).json({
+            error: "Server config missing: BREVO_API_KEY is required."
+        });
+    }
+
+    if (Number.isNaN(listId)) {
+        return res.status(500).json({
+            error: "Server config invalid: BREVO_LIST_ID must be a number (example: 5)."
+        });
     }
 
     // Brevo contacts API requires the API key, not the SMTP key.
