@@ -37,10 +37,10 @@
                 <!-- Desktop menu -->
                 <div id="desktop-menu" aria-hidden="false">
                     <ul>
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Tour</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#music">Music</a></li>
+                        <li><a href="#tour">Tour</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -57,10 +57,10 @@
                         <img src="assets/images/icon-close.svg" alt="">
                     </button>
                     <ul>
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Tour</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#music">Music</a></li>
+                        <li><a href="#tour">Tour</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </nav> 
@@ -82,7 +82,7 @@
 
         <!--======================== Music Section ========================-->
         <section class="music">
-            <h2>- Music -</h2>
+            <h2 id="music">- Music -</h2>
             <div class="music-col">
                 <div class="col1">
                     <img src="assets/images/bbking.jpg" alt="bb king">
@@ -99,7 +99,7 @@
 
         <!--======================== Music Section ========================-->
         <section class="tour">
-            <h2>- Tour -</h2>
+            <h2 id="tour">- Tour -</h2>
             <p>SAMEDI 28 MARS 2026, 20H00, <a href="https://flokylaloutre.ch/">Floki La Loutre</a>, Carouge, Genève</p>
             <p>DIMANCHE 10 MAI 2026, 20H00, <a href="https://www.tcanieres.ch/">TC Anière</a>, Annière, Genève</p>
             <p>SAMEDI 6 JUIN 2026, 18H00, <a href="https://le-festival-de-l-eau.ch/">Le Festival de l’eau</a>, Le Muids, Vaud</p>
@@ -108,17 +108,20 @@
 
         <!--======================== Videos Section ========================-->
         <section class="videos">
-            <h2>- Videos -</h2>
-            <video controls preload="metadata">
-                <source src="assets/images/video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <h2 id="videos">- Videos -</h2>
+            <div class="video-shell">
+                <video id="main-video" preload="metadata" tabindex="0">
+                    <source src="assets/images/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="video-toggle" type="button" aria-label="Play video">PLAY</button>
+            </div>
 
         </section>
 
         <!--======================== Contact Section ========================-->
         <section class="contact">
-            <h2>- Contact -</h2>
+            <h2 id="contact">- Contact -</h2>
             <div class="contact-wrapper">
                 <img src="assets/images/booking.png" alt="">
                 <form class="contact-form" action="#" method="post">

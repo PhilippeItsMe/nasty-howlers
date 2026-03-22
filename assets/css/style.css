@@ -89,6 +89,15 @@ p {
     cursor: pointer;
 }
 
+.hero a:focus {
+    outline: none;
+}
+
+.hero a:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
+}
+
 .book-link {
     display: inline-flex;
     align-items: center;
@@ -120,6 +129,15 @@ p {
     padding: 1rem 2rem;
     margin: 3rem 0;
     border-radius: 3rem;
+}
+
+.music .col2 a:focus {
+    outline: none;
+}
+
+.music .col2 a:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
 }
 
 
@@ -177,6 +195,16 @@ nav img {
 
 #desktop-menu li a {
     text-decoration: none;
+}
+
+#desktop-menu li a:focus {
+    outline: none;
+}
+
+#desktop-menu li a:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
+    border-radius: 0.2rem;
 }
 
 
@@ -331,6 +359,15 @@ nav img {
     cursor: pointer;
 }
 
+.bloc2 button:focus {
+    outline: none;
+}
+
+.bloc2 button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
+}
+
 .bloc2 button:disabled {
     opacity: 0.7;
     cursor: wait;
@@ -427,6 +464,15 @@ nav img {
     text-decoration: none;
 }
 
+.tour p a:focus {
+    outline: none;
+}
+
+.tour p a:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
+}
+
 .tour p:hover {
     background-color: var(--transparent);
 }
@@ -451,10 +497,66 @@ nav img {
     height: auto;
 }
 
+.video-shell {
+    position: relative;
+    width: min(90%, 960px);
+    margin: 0 auto;
+}
+
+.video-shell video {
+    width: 100%;
+    max-width: none;
+}
+
+.video-toggle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 999px;
+    background-color: rgba(253, 185, 76, 0.95);
+    color: var(--black);
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.9rem 1.4rem;
+    cursor: pointer;
+}
+
+.video-shell.is-playing .video-toggle {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-shell:hover .video-toggle,
+.video-shell:focus-within .video-toggle,
+.video-shell.is-paused .video-toggle {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.video-toggle:focus {
+    outline: none;
+}
+
+.video-toggle:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
+}
+
 @media (max-width: 768px) {
     .videos {
         background-attachment: scroll;
     }
+}
+
+.videos video:focus {
+    outline: none;
+}
+
+.videos video:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
 }
 
 
@@ -495,6 +597,17 @@ nav img {
     font-size: 1rem;
 }
 
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
+}
+
 .contact-form textarea {
     resize: vertical;
     min-height: 8rem;
@@ -510,6 +623,15 @@ nav img {
     font-weight: 600;
     padding: 0.9rem 1.5rem;
     cursor: pointer;
+}
+
+.contact-form button:focus {
+    outline: none;
+}
+
+.contact-form button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
 }
 
 @media (max-width: 900px) {

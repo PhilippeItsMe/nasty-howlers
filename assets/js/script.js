@@ -1,3 +1,5 @@
+// ------------------ Newsletter Optin
+
 const newsletterForm = document.getElementById("newsletter-form");
 
 if (newsletterForm) {
@@ -62,4 +64,44 @@ if (newsletterForm) {
             submitButton.disabled = false;
         }
     });
+}
+
+
+// ------------------ Video setup
+
+const mainVideo = document.getElementById("main-video");
+const videoToggle = document.querySelector(".video-toggle");
+const videoShell = document.querySelector(".video-shell");
+
+if (mainVideo && videoToggle && videoShell) {
+    const syncVideoUI = () => {
+        const paused = mainVideo.paused;
+        videoToggle.textContent = paused ? "PLAY" : "PAUSE";
+        videoToggle.setAttribute("aria-label", paused ? "Play video" : "Pause video");
+        videoShell.classList.toggle("is-playing", !paused);
+        videoShell.classList.toggle("is-paused", paused);
+    };
+
+    videoToggle.addEventListener("click", () => {
+        if (mainVideo.paused) {
+            mainVideo.play();
+            return;
+        }
+
+        mainVideo.pause();
+    });
+
+    mainVideo.addEventListener("click", () => {
+        if (mainVideo.paused) {
+            mainVideo.play();
+            return;
+        }
+
+        mainVideo.pause();
+    });
+
+    mainVideo.addEventListener("play", syncVideoUI);
+    mainVideo.addEventListener("pause", syncVideoUI);
+    mainVideo.addEventListener("ended", syncVideoUI);
+    syncVideoUI();
 }
