@@ -151,7 +151,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 2rem;
     height: 5rem;
     background-color: var(--black);
 }
@@ -272,7 +272,7 @@ nav img {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
 }
 
 .bloc1 {
@@ -310,10 +310,13 @@ nav img {
     border-bottom-left-radius: 1rem;
 }
 
-.bloc2 input:focus,
-.bloc2 input:focus-visible {
+.bloc2 input:focus {
     outline: none;
+}
 
+.bloc2 input:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 0.2rem;
 } 
 
 .bloc2 button {
@@ -365,6 +368,7 @@ nav img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding-bottom: 6rem;
 }
 
 .music-col {
@@ -401,4 +405,141 @@ nav img {
 .col2 img:first-of-type:hover,
 .col2 img:nth-of-type(2):hover {
     transform: scale(1.05);
+}
+
+
+/* -------------------- Tour Section --------------------*/
+
+.tour {
+    background-color: var(--black);
+    padding: 0 5rem 6rem 5rem;
+}
+
+.tour p {
+    border-top: 0.5px solid var(--white);
+    border-bottom: 0.5px solid var(--white);
+    padding: 2rem 0;
+    font-size: 1.2rem;
+}
+
+.tour p a {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.tour p:hover {
+    background-color: var(--transparent);
+}
+
+
+/* -------------------- Videos Section --------------------*/
+
+.videos {
+    text-align: center;
+    padding-bottom: 6rem;
+    background-image: url("../images/marbre_fonce.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.videos video {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .videos {
+        background-attachment: scroll;
+    }
+}
+
+
+/* -------------------- Contact Section --------------------*/
+
+.contact {
+    padding: 0 2rem 4rem;
+    background-color: var(--white);
+}
+
+.contact-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-wrapper img {
+    width: 10rem;
+    max-width: 20%;
+}
+
+.contact-form {
+    width: min(100%, 34rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background-color: var(--lightgrey);
+    color: var(--black);
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
+.contact-form button {
+    margin-top: 0.6rem;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.9rem 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-wrapper img {
+        max-width: 8rem;
+        width: 30%;
+    }
+}
+
+.contact-wrapper img {
+    background-color: var(--lightgrey);
+}
+
+.contact-wrapper img:hover {
+    background-color: var(--orange);
+}
+
+/* -------------------- Footer --------------------*/
+
+footer {
+    background-color: var(--orange);
+    height: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--black);
 }
