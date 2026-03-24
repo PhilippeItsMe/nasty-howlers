@@ -116,7 +116,6 @@
                 </video>
                 <button class="video-toggle" type="button" aria-label="Play video">PLAY</button>
             </div>
-
         </section>
 
         <!--======================== Contact Section ========================-->
@@ -124,13 +123,14 @@
             <h2 id="contact">- Contact -</h2>
             <div class="contact-wrapper">
                 <img src="assets/images/booking.png" alt="">
-                <form class="contact-form" action="#" method="post">
+                <form class="contact-form" id="contact-form" action="#" method="post">
                     <input id="first-name" name="first_name" type="text" placeholder="Prénom" aria-label="Prénom" autocomplete="given-name" required>
                     <input id="last-name" name="last_name" type="text" placeholder="Nom" aria-label="Nom" autocomplete="family-name" required>
                     <input id="contact-email" name="email" type="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
                     <input id="contact-mobile" name="mobile" type="tel" placeholder="Mobile (+41 79 000 00 00)" aria-label="Mobile" autocomplete="tel" required>
                     <textarea id="contact-message" name="message" rows="5" placeholder="Message" aria-label="Message" required></textarea>
                     <button type="submit">ENVOYER</button>
+                    <p id="contact-status" class="contact-status" aria-live="polite"></p>
                 </form>
                 <img src="assets/images/record.png" alt="">
             </div>
