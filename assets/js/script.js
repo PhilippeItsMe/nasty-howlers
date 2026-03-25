@@ -132,6 +132,12 @@ if (contactForm) {
                     throw new Error("API route not found (404). Open the site from Vercel, not GitHub Pages.");
                 }
 
+                if (response.status === 405) {
+                    throw new Error(
+                        "Method not allowed (405). Verify the site runs on the same Vercel domain as /api/contact and redeploy if needed."
+                    );
+                }
+
                 throw new Error(result.error || `Contact request failed (HTTP ${response.status}).`);
             }
 
