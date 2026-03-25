@@ -9,18 +9,6 @@ function escapeHtml(value) {
         .replace(/'/g, "&#39;");
 }
 
-function maskEmail(value) {
-    const email = String(value || "").trim();
-
-    if (!email.includes("@")) {
-        return email ? `${email.slice(0, 2)}***` : "";
-    }
-
-    const [localPart, domain] = email.split("@");
-    const localPreview = localPart.length <= 2 ? "**" : `${localPart.slice(0, 2)}***`;
-    return `${localPreview}@${domain}`;
-}
-
 export default async function handler(req, res) {
     const allowedMethods = "POST, OPTIONS";
 
@@ -52,17 +40,8 @@ export default async function handler(req, res) {
     }
 
     if (!senderEmail || !EMAIL_REGEX.test(senderEmail)) {
-        const debug = {
-            vercelEnv: process.env.VERCEL_ENV || "unknown",
-            senderEmailPresent: Boolean(process.env.BREVO_SENDER_EMAIL),
-            senderEmailTrimmedLength: senderEmail.length,
-            senderEmailPreview: maskEmail(process.env.BREVO_SENDER_EMAIL),
-            senderEmailRegexValid: EMAIL_REGEX.test(senderEmail)
-        };
-
         return res.status(500).json({
-            error: "Server config invalid: BREVO_SENDER_EMAIL must be a valid email address.",
-            debug
+            error: "Server config invalid: BREVO_SENDER_EMAIL must be a valid email address."
         });
     }
 
