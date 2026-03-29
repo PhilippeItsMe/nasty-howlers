@@ -154,11 +154,16 @@ if (contactForm) {
 
 // ------------------ Video setup
 
-const mainVideo = document.getElementById("main-video");
-const videoToggle = document.querySelector(".video-toggle");
-const videoShell = document.querySelector(".video-shell");
+const videoShells = document.querySelectorAll(".video-shell");
 
-if (mainVideo && videoToggle && videoShell) {
+videoShells.forEach((videoShell) => {
+    const mainVideo = videoShell.querySelector("video");
+    const videoToggle = videoShell.querySelector(".video-toggle");
+
+    if (!mainVideo || !videoToggle) {
+        return;
+    }
+
     const syncVideoUI = () => {
         const paused = mainVideo.paused;
         videoToggle.textContent = paused ? "PLAY" : "PAUSE";
@@ -189,7 +194,7 @@ if (mainVideo && videoToggle && videoShell) {
     mainVideo.addEventListener("pause", syncVideoUI);
     mainVideo.addEventListener("ended", syncVideoUI);
     syncVideoUI();
-}
+});
 
 
 // ------------------ Mobile navigation

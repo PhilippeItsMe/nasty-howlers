@@ -527,7 +527,7 @@ nav img {
 .video-shell {
     position: relative;
     width: min(90%, 960px);
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
 }
 
 .video-shell video {
